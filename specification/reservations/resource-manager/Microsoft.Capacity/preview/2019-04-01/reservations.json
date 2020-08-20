@@ -1702,20 +1702,26 @@
         }
       }
     },
-    "Scopes": {
+    "ScopeBody": {
       "type": "object",
       "properties": {
         "properties": {
-          "type": "object",
-          "properties": {
-            "scopes": {
-              "type": "array",
-              "items": {
-                "type": "string"
-              }
-            }
-          }
+          "$ref": "#/definitions/ScopeRequestProperties"
         }
+      }
+    },
+    "ScopeRequestProperties": {
+      "type": "object",
+      "properties": {
+        "scopes": {
+          "$ref": "#/definitions/Scopes"
+        }
+      }
+    },
+    "Scopes": {
+      "type": "array",
+      "items": {
+        "type": "string"
       }
     }
   },
@@ -1727,7 +1733,7 @@
       "required": true,
       "type": "object",
       "schema": {
-        "$ref": "#/definitions/Scopes"
+        "$ref": "#/definitions/ScopeBody"
       }
     },
     "PurchaseParameter": {
